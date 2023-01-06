@@ -7,13 +7,15 @@ using EBAC.Core.Singleton;
 public class GameManager : Singleton<GameManager>
 {
     public PlayerController PlayerController;
-    public LoadScene LoadScene;
+    public GameObject screen;
 
-    private void DeadPlayer()
+    public void StartGame(bool check)
     {
-        if (PlayerController != null)
-        {
-            LoadScene.Load(1);
-        }
+        PlayerController.ChangeIsPlaying(check);
+    }
+
+    public void ShowFinalScreen()
+    {
+        screen.SetActive(true);
     }
 }
