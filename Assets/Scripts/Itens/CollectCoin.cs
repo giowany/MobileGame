@@ -13,10 +13,6 @@ public class CollectCoin : CollectBase
     {
         _coin = GetComponentInChildren<ParticleSystem>();
     }
-    private void DisableItem()
-    {
-        gameObject.SetActive(false);
-    }
 
     protected override void OnCollect()
     {
@@ -24,7 +20,6 @@ public class CollectCoin : CollectBase
         ItemManager.instance.AddCoins();
         if(_coin != null) _coin.Play();
         if(coinAudioSource != null) coinAudioSource.Play();
-        Invoke("DisableItem", 0);
     }
 
     private void Update()
