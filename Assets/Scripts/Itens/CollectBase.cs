@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectBase : MonoBehaviour
 {
-
+    [Header("Collect Base")]
     public string tagPlayer = "Player";
     public GameObject render;
 
