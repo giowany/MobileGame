@@ -11,6 +11,7 @@ public class FinalGame : MonoBehaviour
         if (other.transform.CompareTag(checkPlayerTag))
         {
             GameManager.instance.StartGame(false);
+            GameManager.instance.PlayAnimationPlayer();
             GameManager.instance.ShowFinalScreen();
         }
    }

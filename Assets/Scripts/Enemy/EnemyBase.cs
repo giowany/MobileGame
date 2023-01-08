@@ -11,6 +11,7 @@ public class EnemyBase : MonoBehaviour
         if (collision.transform.CompareTag(tagPlayer))
         {
             GameManager.instance.StartGame(false);
+            GameManager.instance.PlayAnimationPlayer(AnimatorManager.AnimatorType.DEAD);
             GameManager.instance.ShowFinalScreen();
         }
     }

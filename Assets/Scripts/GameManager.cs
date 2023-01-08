@@ -14,6 +14,11 @@ public class GameManager : Singleton<GameManager>
         PlayerController.ChangeIsPlaying(check);
     }
 
+    public void PlayAnimationPlayer(AnimatorManager.AnimatorType type = AnimatorManager.AnimatorType.IDLE)
+    {
+        PlayerController.PlayAnimation(type);
+    }
+
     public void ShowFinalScreen()
     {
         screen.SetActive(true);

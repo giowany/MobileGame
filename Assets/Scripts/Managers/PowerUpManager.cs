@@ -5,42 +5,42 @@ using EBAC.Core.Singleton;
 
 public class PowerUpManager : Singleton<PowerUpManager>
 {
-    public PlayerController PlayerController;
+    public PlayerController playerController;
     public SOPowerUps powerUpsSO;
 
     #region Power Up Speed Up
     public void PowerSpeedPlayer()
     {
-        PlayerController.PowerUpSpeedUp(powerUpsSO.PowerUpSpeed);
+        playerController.PowerUpSpeedUp(powerUpsSO.PowerUpSpeed);
     }
 
     public void ResetPlayerSpeed()
     {
-        PlayerController.ResetSpeed();
+        playerController.ResetSpeed();
     }
     #endregion
 
     #region Power Up Fly
     public void StartPowerUpFly()
     {
-        PlayerController.PowerUpFly(powerUpsSO.heightFly, powerUpsSO.duration, powerUpsSO.ease);
+        playerController.PowerUpFly(powerUpsSO.heightFly, powerUpsSO.duration, powerUpsSO.ease);
     }
 
     public void ResetHeight()
     {
-        PlayerController.ResetHeight(powerUpsSO.duration, powerUpsSO.ease);
+        playerController.ResetHeight(powerUpsSO.duration, powerUpsSO.ease);
     }
     #endregion
 
     #region Power Up Imã
     public void StartCollectAura()
     {
-        PlayerController.collectAura.SetActive(true);
+        playerController.collectAura.SetActive(true);
     }
 
     public void EndCollectAura()
     {
-        PlayerController.collectAura.SetActive(false);
+        playerController.collectAura.SetActive(false);
     }
     #endregion
 }

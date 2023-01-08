@@ -25,7 +25,7 @@ public class CollectCoin : CollectBase
     private void Update()
     {
         if(collect)
-            transform.position = Vector3.Lerp(transform.position, PowerUpManager.instance.PlayerController.transform.position, timeToLerp * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, PowerUpManager.instance.playerController.transform.position, timeToLerp * Time.deltaTime);
     }
 
 }
