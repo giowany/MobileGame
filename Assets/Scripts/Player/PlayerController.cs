@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float timeToLerp = 1f;
     public float speedPlayer = 1f;
     public GameObject collectAura;
+    public Transform initPlayerReference;
 
     [Header("Animator")]
     public AnimatorManager animatorManager;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool _isPlaying = false;
     private float _currentSpeed;
     private Vector3 _currentPos;
+    private Vector3 _posLerpReference;
 
     public void ChangeIsPlaying(bool checkGame)
     {
@@ -30,9 +32,16 @@ public class PlayerController : MonoBehaviour
         if(type == AnimatorManager.AnimatorType.DEAD)
             transform.DOMoveZ(-1f, .1f).SetRelative();
     }
+    
+    public void ResetAnimation()
+    {
+        PlayAnimation();
+    }
 
     public void LerpPlayer()
     {
+        if (!_isPlaying) return;
+
         _pos = lerpReference.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
@@ -48,6 +57,16 @@ public class PlayerController : MonoBehaviour
         LerpPlayer();
     }
 
+    public void ResetPosition()
+    {
+        transform.position = initPlayerReference.position;
+        _currentSpeed = speedPlayer;
+        _posLerpReference = initPlayerReference.position;
+        _posLerpReference.y = lerpReference.position.y;
+        _posLerpReference.z = lerpReference.position.z;
+        lerpReference.position = _posLerpReference;
+    }
+
     void Update()
     {
         PlayerMove();
@@ -57,6 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         ResetSpeed();
         _currentPos = transform.position;
+        initPlayerReference.position = transform.position;
     }
 
     #region PowerUps

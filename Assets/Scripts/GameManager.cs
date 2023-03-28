@@ -14,6 +14,19 @@ public class GameManager : Singleton<GameManager>
         PlayerController.ChangeIsPlaying(check);
     }
 
+    private IEnumerator ResetGameCoRotine(bool check0)
+    {
+        PlayerController.ChangeIsPlaying(check0);
+        yield return new WaitForSeconds(1);
+        StartGame(!check0);
+        
+    }
+
+    public void ResetGame()
+    {
+        StartCoroutine(ResetGameCoRotine(false));
+    }
+
     public void PlayAnimationPlayer(AnimatorManager.AnimatorType type = AnimatorManager.AnimatorType.IDLE)
     {
         PlayerController.PlayAnimation(type);
