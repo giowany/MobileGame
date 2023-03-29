@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e117c8ce5d8f443a02557ca7996e2e, type: 3}
   m_Name: PowerUpSetings
   m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 5602516832152039734, guid: d91720b99044eeb46b2ff24e3e440ec8, type: 3}
+  - {fileID: 6156058790494231506, guid: dfa3c9bb8c57c9c45962ad309fd897e4, type: 3}
+  - {fileID: 258131255975334804, guid: 3b1e4c15fea2a0b4381372c68598f9d6, type: 3}
+  - {fileID: 1351107457627682253, guid: 57041ff7c1c94734a8372f8501e98da6, type: 3}
   PowerUpSpeed: 2
   heightFly: 2
   duration: 0.7

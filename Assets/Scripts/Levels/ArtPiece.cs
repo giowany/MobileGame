@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArtPiece : MonoBehaviour
 {
-    private GameObject _currentArt;
+    public GameObject _currentArt;
 
     public void ChangeArtPiece(GameObject pieceArt)
     {

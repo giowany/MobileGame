@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
     #region PowerUps
     public void PowerUpSpeedUp(float PowerSpeed)
     {
+        if (_currentSpeed > speedPlayer) return;
         _currentSpeed *= PowerSpeed;
         animatorManager.PlayAnimation(AnimatorManager.AnimatorType.RUN, _currentSpeed / speedPlayer);
     }

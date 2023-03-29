@@ -6,6 +6,8 @@ using DG.Tweening;
 [CreateAssetMenu]
 public class SOPowerUps : ScriptableObject
 {
+    public List<GameObject> powerUps;
+
     [Header("Power Up Speed Up")]
     public float PowerUpSpeed;
 

@@ -13,6 +13,8 @@ public class FinalGame : MonoBehaviour
             GameManager.instance.StartGame(false);
             GameManager.instance.PlayAnimationPlayer();
             GameManager.instance.ShowFinalScreen();
+            var p = other.GetComponent<PlayerController>();
+            p.ResetHeight(PowerUpManager.instance.powerUpsSO.duration, PowerUpManager.instance.powerUpsSO.ease);
         }
    }
 }

@@ -69,6 +69,11 @@ public class LevelManager : Singleton<LevelManager>
             p.ChangeArtPiece(ArtManager.instance.GetArtByType(_currentSetup.artType).artPart);
         }
 
+        foreach(var power in spawnedpiece.GetComponentsInChildren<SpawPUPiece>())
+        {
+            power.SpawPowerUp(PowerUpManager.instance.powerUpsSO.powerUps[Random.Range(0,PowerUpManager.instance.powerUpsSO.powerUps.Count)]);
+        }
+
         _levelPieces.Add(spawnedpiece);
     }
 
@@ -88,6 +93,8 @@ public class LevelManager : Singleton<LevelManager>
         {
             CreatPieces(_currentSetup.levelPieceEnd);
         }
+
+        ColorManager.instance.ChangeColorArtByType(_currentSetup.artType);
     }
 
     private void ClearListPieces()
