@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EBAC.Core.Singleton;
+using DG.Tweening;
 
 public class LevelManager : Singleton<LevelManager>
 {
     public Transform conteiner;
     public List<GameObject> levels;
     public List<SOLevelParts> parts;
+
+    [Header("Animation Setings")]
+    public float durationAnimation = .1f;
+    public float delayAnimation = .1f;
+    public Ease ease;
 
     [SerializeField] private int _index;
     private SOLevelParts _currentSetup;
@@ -23,6 +29,8 @@ public class LevelManager : Singleton<LevelManager>
     public void SpawNextLevel()
     {
         ClearListPieces();
+        PowerUpManager.instance.ResetAll();
+        CoinAnimatorManager.instance.ClearListPieces();
         NextLevel();
         CreatLevelPieces();
     }
@@ -95,6 +103,28 @@ public class LevelManager : Singleton<LevelManager>
         }
 
         ColorManager.instance.ChangeColorArtByType(_currentSetup.artType);
+
+        StartCoroutine(ScalePieces());
+    }
+
+    IEnumerator ScalePieces()
+    {
+        foreach(var p in _levelPieces)
+        {
+            p.transform.localScale = Vector3.zero;
+        }
+
+        yield return null;
+
+        for(int i = 0; i < _levelPieces.Count; i++)
+        {
+            _levelPieces[i].transform.DOScale(1, durationAnimation).SetEase(ease);
+            yield return new WaitForSeconds(delayAnimation);
+
+        }
+
+        CoinAnimatorManager.instance.StartAnimations();
+
     }
 
     private void ClearListPieces()

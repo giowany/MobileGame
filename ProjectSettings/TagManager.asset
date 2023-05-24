@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coin
   - CollectAura
+  - BorderD
+  - BorderE
   layers:
   - Default
   - TransparentFX

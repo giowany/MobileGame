@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6156058790494231510}
   - component: {fileID: 6156058790494231509}
   - component: {fileID: 6156058790494231508}
+  - component: {fileID: -5808641174085396413}
   m_Layer: 0
   m_Name: PowerUpSpeedUp
   m_TagString: Untagged
@@ -110,4 +111,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagPlayer: Player
   render: {fileID: 6156058790494231506}
+  playerController: {fileID: 0}
   timaToEnd: 5
+--- !u!114 &-5808641174085396413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156058790494231506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f5b5cca12b512459a30d5c37f21a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
+  meshRenderer: {fileID: 6156058790494231510}
+  startColor: {r: 1, g: 1, b: 1, a: 1}

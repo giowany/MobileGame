@@ -12,6 +12,7 @@ public class CollectCoin : CollectBase
     private void Start()
     {
         _coin = GetComponentInChildren<ParticleSystem>();
+        CoinAnimatorManager.instance.RegisterCoin(this);
     }
 
     protected override void OnCollect()
@@ -20,6 +21,7 @@ public class CollectCoin : CollectBase
         ItemManager.instance.AddCoins();
         if(_coin != null) _coin.Play();
         if(coinAudioSource != null) coinAudioSource.Play();
+        if(playerController != null) playerController.Bounce();
     }
 
     private void Update()

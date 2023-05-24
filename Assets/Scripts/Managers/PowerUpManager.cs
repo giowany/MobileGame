@@ -8,6 +8,13 @@ public class PowerUpManager : Singleton<PowerUpManager>
     public PlayerController playerController;
     public SOPowerUps powerUpsSO;
 
+    public void ResetAll()
+    {
+        ResetPlayerSpeed();
+        ResetHeight();
+        EndCollectAura();
+    }
+
     #region Power Up Speed Up
     public void PowerSpeedPlayer()
     {

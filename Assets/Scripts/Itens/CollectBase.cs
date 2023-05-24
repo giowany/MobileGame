@@ -7,12 +7,15 @@ public class CollectBase : MonoBehaviour
     [Header("Collect Base")]
     public string tagPlayer = "Player";
     public GameObject render;
+    public PlayerController playerController;
 
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.CompareTag(tagPlayer))
         {
+            if (playerController == null)
+                playerController = collision.GetComponent<PlayerController>();
             Collect();
         }
     }
@@ -20,6 +23,7 @@ public class CollectBase : MonoBehaviour
     protected virtual void Collect()
     {
         if(render != null) render.SetActive(false);
+        if (playerController != null) playerController.Bounce();
         OnCollect();
     }
 

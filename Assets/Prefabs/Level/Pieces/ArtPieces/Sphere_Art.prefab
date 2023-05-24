@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 361987443974019646}
   - component: {fileID: 7478555188446818358}
   - component: {fileID: 1583295431051050661}
+  - component: {fileID: 6815917607635489273}
   m_Layer: 0
   m_Name: Sphere_Art
   m_TagString: Untagged
@@ -91,7 +92,22 @@ SphereCollider:
   m_GameObject: {fileID: 3503964923459654285}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6815917607635489273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503964923459654285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f5b5cca12b512459a30d5c37f21a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
+  meshRenderer: {fileID: 7478555188446818358}
+  startColor: {r: 1, g: 1, b: 1, a: 1}

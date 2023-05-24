@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7036606874160662478}
   - component: {fileID: 6214258498672637778}
   - component: {fileID: 3972776243288480670}
+  - component: {fileID: 2770178550566033804}
+  - component: {fileID: 5392466120468604583}
   m_Layer: 0
   m_Name: PFB_Enemy
   m_TagString: Untagged
@@ -109,3 +111,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagPlayer: Player
+--- !u!114 &2770178550566033804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008885315861109765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d41553d07e49e4db88012244092fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  duration: 1
+  range: 3
+--- !u!114 &5392466120468604583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008885315861109765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f5b5cca12b512459a30d5c37f21a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
+  meshRenderer: {fileID: 7036606874160662478}
+  startColor: {r: 1, g: 1, b: 1, a: 1}

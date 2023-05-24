@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5479635868802856544}
   - component: {fileID: 2393891045320737942}
   - component: {fileID: 8922070621183471193}
+  - component: {fileID: 3590928130840276985}
   m_Layer: 0
   m_Name: Cube_Art
   m_TagString: Untagged
@@ -91,7 +92,22 @@ BoxCollider:
   m_GameObject: {fileID: 5442058249194769001}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3590928130840276985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5442058249194769001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f5b5cca12b512459a30d5c37f21a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
+  meshRenderer: {fileID: 2393891045320737942}
+  startColor: {r: 1, g: 1, b: 1, a: 1}

@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
     public float speedPlayer = 1f;
     public GameObject collectAura;
     public Transform initPlayerReference;
+    public Rigidbody rbPlayer;
 
     [Header("Animator")]
     public AnimatorManager animatorManager;
+
+    [SerializeField] private BounceHelper _bounceHelper;
 
     private Vector3 _pos;
     private bool _isPlaying = false;
@@ -20,10 +23,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 _currentPos;
     private Vector3 _posLerpReference;
 
+    public void Bounce()
+    {
+        if(_bounceHelper != null)
+            _bounceHelper.Bounce();
+    }
+
     public void ChangeIsPlaying(bool checkGame)
     {
         _isPlaying = checkGame;
-        if(checkGame) PlayAnimation(AnimatorManager.AnimatorType.RUN);
+        if(_isPlaying) PlayAnimation(AnimatorManager.AnimatorType.RUN);
     }
 
     public void PlayAnimation(AnimatorManager.AnimatorType type = AnimatorManager.AnimatorType.IDLE)
@@ -40,13 +49,11 @@ public class PlayerController : MonoBehaviour
 
     public void LerpPlayer()
     {
-        if (!_isPlaying) return;
-
         _pos = lerpReference.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
 
-        transform.position = Vector3.Lerp(transform.position, _pos, timeToLerp * Time.deltaTime);
+       transform.position = Vector3.Lerp(transform.position, _pos, timeToLerp * Time.deltaTime);
     }
 
     void PlayerMove()
