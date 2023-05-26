@@ -5,12 +5,13 @@ using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform lerpReference;
     public float timeToLerp = 1f;
     public float speedPlayer = 1f;
     public GameObject collectAura;
     public Transform initPlayerReference;
     public Rigidbody rbPlayer;
+    public TouchController touchController;
+    public ParticleSystem particle;
 
     [Header("Animator")]
     public AnimatorManager animatorManager;
@@ -39,7 +40,10 @@ public class PlayerController : MonoBehaviour
     {
         animatorManager.PlayAnimation(type);
         if(type == AnimatorManager.AnimatorType.DEAD)
+        {
             transform.DOMoveZ(-1f, .1f).SetRelative();
+            particle.Play();
+        }
     }
     
     public void ResetAnimation()
@@ -49,9 +53,12 @@ public class PlayerController : MonoBehaviour
 
     public void LerpPlayer()
     {
-        _pos = lerpReference.position;
+        _pos = touchController.transform.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
+
+        if(_pos.x < touchController.limit.x) _pos.x = touchController.limit.x;
+        else if(_pos.x > touchController.limit.y) _pos.x = touchController.limit.y;
 
        transform.position = Vector3.Lerp(transform.position, _pos, timeToLerp * Time.deltaTime);
     }
@@ -69,9 +76,10 @@ public class PlayerController : MonoBehaviour
         transform.position = initPlayerReference.position;
         _currentSpeed = speedPlayer;
         _posLerpReference = initPlayerReference.position;
-        _posLerpReference.y = lerpReference.position.y;
-        _posLerpReference.z = lerpReference.position.z;
-        lerpReference.position = _posLerpReference;
+        _posLerpReference.y = touchController.transform.position.y;
+        _posLerpReference.z = touchController.transform.position.z;
+        touchController.transform.position = _posLerpReference;
+        particle.Stop();
     }
 
     void Update()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2763461858594409285}
   - component: {fileID: 8361268443043034910}
   - component: {fileID: 8739773343209838628}
+  - component: {fileID: 1074482925342013611}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -110,5 +111,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1.5
+  delay: 0.5
   meshRenderer: {fileID: 2763461858594409285}
   startColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1074482925342013611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8242521954402526499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e073148ae28cffa41ba55f9ae322cfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floor: {fileID: 2113067125297912070}

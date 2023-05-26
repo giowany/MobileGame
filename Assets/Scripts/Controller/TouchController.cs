@@ -6,6 +6,7 @@ public class TouchController : MonoBehaviour
 {
     public Vector2 passPosition;
     public float velocity = 1f;
+    public Vector2 limit;
 
 
     public void TouchControl()
@@ -16,6 +17,9 @@ public class TouchController : MonoBehaviour
         }
 
         passPosition = Input.mousePosition;
+
+        if (transform.position.x < limit.x) transform.position = new Vector3(limit.x, transform.position.y);
+        else if (transform.position.x > limit.y) transform.position = new Vector3(limit.y, transform.position.y);
     }
 
     void Move(float speed)

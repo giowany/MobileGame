@@ -121,6 +121,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 13025251525379127}
     m_Modifications:
+    - target: {fileID: 667715877544154514, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
+      propertyPath: planetransform
+      value: 
+      objectReference: {fileID: 5455764871415826534}
     - target: {fileID: 667715877544154515, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
       propertyPath: m_Name
       value: PFB_Coin (1)
@@ -183,6 +187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 13025251525379127}
     m_Modifications:
+    - target: {fileID: 667715877544154514, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
+      propertyPath: planetransform
+      value: 
+      objectReference: {fileID: 5455764871415826534}
     - target: {fileID: 667715877544154515, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
       propertyPath: m_Name
       value: PFB_Coin (2)
@@ -300,6 +308,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2113067125297912070, guid: 590441ab437382b4499f2a6034ff3890, type: 3}
   m_PrefabInstance: {fileID: 4998874338262266061}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5455764871415826534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1074482925342013611, guid: 590441ab437382b4499f2a6034ff3890, type: 3}
+  m_PrefabInstance: {fileID: 4998874338262266061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e073148ae28cffa41ba55f9ae322cfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5399065079277285184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -373,6 +392,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 13025251525379127}
     m_Modifications:
+    - target: {fileID: 667715877544154514, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
+      propertyPath: planetransform
+      value: 
+      objectReference: {fileID: 5455764871415826534}
     - target: {fileID: 667715877544154515, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
       propertyPath: m_Name
       value: PFB_Coin (4)
@@ -501,6 +524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 13025251525379127}
     m_Modifications:
+    - target: {fileID: 667715877544154514, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
+      propertyPath: planetransform
+      value: 
+      objectReference: {fileID: 5455764871415826534}
     - target: {fileID: 667715877544154515, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
       propertyPath: m_Name
       value: PFB_Coin (3)
@@ -563,6 +590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 13025251525379127}
     m_Modifications:
+    - target: {fileID: 667715877544154514, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
+      propertyPath: planetransform
+      value: 
+      objectReference: {fileID: 5455764871415826534}
     - target: {fileID: 667715877544154515, guid: bc2c59fcbb52f8541b664f0d41bf3b5a, type: 3}
       propertyPath: m_Name
       value: PFB_Coin

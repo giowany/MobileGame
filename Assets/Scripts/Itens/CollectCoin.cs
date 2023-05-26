@@ -8,6 +8,7 @@ public class CollectCoin : CollectBase
     public AudioSource coinAudioSource;
     public float timeToLerp = 1f;
     public bool collect = false;
+    public FloorReference planetransform;
 
     private void Start()
     {
@@ -19,9 +20,13 @@ public class CollectCoin : CollectBase
     {
         base.OnCollect();
         ItemManager.instance.AddCoins();
-        if(_coin != null) _coin.Play();
+        if(_coin != null)
+        {
+            _coin.Play();
+            _coin.collision.SetPlane(0, planetransform.floor);
+        }
+
         if(coinAudioSource != null) coinAudioSource.Play();
-        if(playerController != null) playerController.Bounce();
     }
 
     private void Update()
